@@ -48,7 +48,12 @@
         <div class="container">
           <div id="app" class="carousel">
             <div class="image">
-              <img :src="image + current + '.jpg'" alt="Immagine non trovata" />
+              <img
+                :src="image + current + '.jpg'"
+                @mouseleave="startRotation"
+                @mouseover="stopRotation"
+                alt="Immagine non trovata"
+              />
             </div>
             <div class="arrow left">
               <i class="fas fa-chevron-left" @click="prev"></i>
@@ -56,29 +61,6 @@
             <div class="arrow right">
               <i class="fas fa-chevron-right" @click="next"></i>
             </div>
-          </div>
-          <div class="circles">
-            <a class="circle first focused" href="">
-              <i class="far fa-circle"></i>
-            </a>
-            <a class="circle" href="">
-              <i class="far fa-circle"></i>
-            </a>
-            <a class="circle" href="">
-              <i class="far fa-circle"></i>
-            </a>
-            <a class="circle" href="">
-              <i class="far fa-circle"></i>
-            </a>
-            <a class="circle" href="">
-              <i class="far fa-circle"></i>
-            </a>
-            <a class="circle" href="">
-              <i class="far fa-circle"></i>
-            </a>
-            <a class="circle last" href="">
-              <i class="far fa-circle"></i>
-            </a>
           </div>
         </div>
       </main>

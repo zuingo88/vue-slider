@@ -6,6 +6,10 @@ function vueSlider() {
       current: 1,
       min: 1,
       max: 7,
+      timer: null,
+    },
+    mounted: function () {
+      this.startRotation();
     },
     methods: {
       next: function () {
@@ -13,13 +17,19 @@ function vueSlider() {
         if (this.current > this.max) {
           this.current = this.min;
         }
-        //return this.current
       },
       prev: function () {
         this.current--;
         if (this.current < this.min) {
           this.current = this.max;
         }
+      },
+      startRotation: function () {
+        this.timer = setInterval(this.next, 3000);
+      },
+      stopRotation: function () {
+        clearTimeout(this.timer);
+        this.timer = null;
       },
     },
   });
